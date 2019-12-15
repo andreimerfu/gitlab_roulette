@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../lib/gitlab_roulette/gitlab/danger/roulette'
+require_relative '../gitlab/danger/roulette'
 
 module Danger
   class Roulette < Plugin
