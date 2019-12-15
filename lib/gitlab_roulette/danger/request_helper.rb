@@ -3,7 +3,7 @@
 require 'net/http'
 require 'json'
 
-module GitlabRoulette
+module Gitlab
   module Danger
     module RequestHelper
       HTTPError = Class.new(RuntimeError)
