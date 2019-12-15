@@ -2,7 +2,7 @@
 
 require_relative 'teammate'
 
-module Gitlab
+module GitlabRoulette
   module Danger
     module Helper
       RELEASE_TOOLS_BOT = 'gitlab-release-tools-bot'
@@ -161,7 +161,7 @@ module Gitlab
       }.freeze
 
       def new_teammates(usernames)
-        usernames.map { |u| Gitlab::Danger::Teammate.new('username' => u) }
+        usernames.map { |u| GitlabRoulette::Danger::Teammate.new('username' => u) }
       end
 
       def missing_database_labels(current_mr_labels)

@@ -2,7 +2,7 @@
 
 require 'cgi'
 
-module Gitlab
+module GitlabRoulette
   module Danger
     class Teammate
       attr_reader :name, :username, :role, :projects
@@ -38,8 +38,8 @@ module Gitlab
 
       def status
         api_endpoint = "#{gitlab_host}/api/v4/users/#{CGI.escape(username)}/status"
-        @status ||= Gitlab::Danger::RequestHelper.http_get_json(api_endpoint)
-      rescue Gitlab::Danger::RequestHelper::HTTPError, JSON::ParserError
+        @status ||= GitlabRoulette::Danger::RequestHelper.http_get_json(api_endpoint)
+      rescue GitlabRoulette::Danger::RequestHelper::HTTPError, JSON::ParserError
         nil # better no status than a crashing Danger
       end
 

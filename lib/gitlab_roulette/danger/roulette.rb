@@ -2,7 +2,7 @@
 
 require_relative 'teammate'
 
-module Gitlab
+module GitlabRoulette
   module Danger
     module Roulette
       ROULETTE_DATA_URL = ENV["GITLAB_ROULETTE_URL"]
@@ -15,13 +15,13 @@ module Gitlab
         @team ||=
           begin
             if ROULETTE_DATA_URL.include?("https") || ROULETTE_DATA_URL.include?("http")
-              data = Gitlab::Danger::RequestHelper.http_get_json(ROULETTE_DATA_URL)
+              data = GitlabRoulette::Danger::RequestHelper.http_get_json(ROULETTE_DATA_URL)
             else
               file = File.read(ROULETTE_DATA_URL)
 
               data = JSON.parse(file)
             end
-            data.map { |hash| ::Gitlab::Danger::Teammate.new(hash) }
+            data.map { |hash| ::GitlabRoulette::Danger::Teammate.new(hash) }
           rescue JSON::ParserError
             raise "Failed to parse JSON response from #{ROULETTE_DATA_URL}"
           end
