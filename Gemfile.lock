@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    gitlab_roulette (0.1.0)
+    gitlab_roulette (0.1.2)
 
 GEM
   remote: https://rubygems.org/
@@ -71,6 +71,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 2.0)
   danger-gitlab
+  faraday
   gitlab_roulette!
   rake (~> 10.0)
 
