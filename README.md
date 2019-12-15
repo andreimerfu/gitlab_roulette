@@ -31,7 +31,7 @@ First of all, you must set some environment variables to your Gitlab CI pipeline
   GITLAB_HOST: "https://self_hosted_gitlab_url"
 ```
 
-Then, create a Dangerfile in the root directory of the project with the following configuration:
+Then, create a `Dangerfile` in the root directory of the project with the following configuration:
 
 ```ruby
 	# frozen_string_literal: true
