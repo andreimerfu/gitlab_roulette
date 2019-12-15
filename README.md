@@ -9,6 +9,7 @@ Gitlab Roulette chooses automatically a random reviewer and maintainer for your 
 Add this line to your application's Gemfile:
 
 ```ruby
+gem 'danger-gitlab'
 gem 'gitlab_roulette'
 ```
 
@@ -30,13 +31,19 @@ First of all, you must set some environment variables to your Gitlab CI pipeline
   GITLAB_HOST: "https://self_hosted_gitlab_url"
 ```
 
-Then all you have to do is to create a Dangerfile in the root directory of the project with the following configuration:
+Then, create a Dangerfile in the root directory of the project with the following configuration:
 
 ```ruby
 	# frozen_string_literal: true
 
-	danger.import_dangerfile(gem: "gitlab_roulette")
+	danger.import_plugin('danger/plugins/helper.rb')
+	danger.import_plugin('danger/plugins/roulette.rb')
+
+	danger.import_dangerfile(path: 'danger/roulette')
 ```
+
+Finally, copy `danger` directory from this repository to your app root directory.
+
 
 GITLAB_ROULETTE_URL contains a JSON file with all the users from your Gitlab and his rank
 
@@ -58,6 +65,8 @@ GITLAB_ROULETTE_URL contains a JSON file with all the users from your Gitlab and
 	}
 ]
 ```
+
+More informations here: https://danger.systems/guides/getting_started.html
 
 ## License
 
