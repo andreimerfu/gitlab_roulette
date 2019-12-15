@@ -2,6 +2,8 @@
 
 Gitlab Roulette chooses automatically a random reviewer and maintainer for your merge request and prints a beautiful message using DangerBot.
 
+<a href="https://ibb.co/Sn9Dsyd"><img src="https://i.ibb.co/hWtx79Z/Screenshot-2019-12-15-at-16-10-36.png" alt="Screenshot-2019-12-15-at-16-10-36" border="0"></a>
+
 ## Installation
 
 Add this line to your application's Gemfile:
