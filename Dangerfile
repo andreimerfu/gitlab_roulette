@@ -2,6 +2,8 @@
 
 require_relative 'lib/gitlab_roulette/gitlab_danger'
 require_relative 'lib/gitlab_roulette/danger/request_helper'
+require_relative 'lib/gitlab_roulette/danger/helper.rb'
+require_relative 'lib/gitlab_roulette/danger/roulette.rb'
 
 danger.import_plugin('danger/plugins/helper.rb')
 danger.import_plugin('danger/plugins/roulette.rb')

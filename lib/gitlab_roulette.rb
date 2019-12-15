@@ -4,6 +4,8 @@ require "ostruct"
 require "json"
 
 require "danger"
+require_relative "../danger/plugins/helper.rb"
+require_relative "../danger/plugins/roulette.rb"
 
 require "gitlab_roulette/danger/helper"
 require "gitlab_roulette/danger/request_helper"

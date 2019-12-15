@@ -5,6 +5,6 @@ require_relative '../../lib/gitlab_roulette/danger/roulette'
 module Danger
   class Roulette < Plugin
     # Put the helper code somewhere it can be tested
-    include GitlabRoulette::Danger::Roulette
+    include Gitlab::Danger::Roulette
   end
 end
