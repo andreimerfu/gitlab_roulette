@@ -7,6 +7,6 @@ module Danger
   # for more details
   class Helper < Plugin
     # Put the helper code somewhere it can be tested
-    include Gitlab::Danger::Helper
+    include Danger::Helper
   end
 end
