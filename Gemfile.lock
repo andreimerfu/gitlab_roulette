@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    gitlab_roulette (0.1.7)
+    gitlab_roulette (0.1.8)
 
 GEM
   remote: https://rubygems.org/
