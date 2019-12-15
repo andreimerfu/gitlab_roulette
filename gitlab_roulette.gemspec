@@ -8,12 +8,12 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Andrei Merfu"]
   spec.email         = ["andreimerfu@outlook.com"]
 
-  spec.summary       = %q{short summary}
-  spec.description   = %q{short description}
+  spec.summary       = %q{GitlabRoulette adds a reviewer roulette to your self hosted Gitlab repository}
+  spec.description   = %q{GitlabRoulette choose reviewer and a maintainer for your merge request automatically}
   spec.homepage      = "https://github.com/andreimerfu/gitlab_roulette.git"
   spec.license       = "MIT"
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+  spec.metadata["allowed_push_host"] = "https://rubygems.org'"
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/andreimerfu/gitlab_roulette.git"

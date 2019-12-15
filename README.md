@@ -1,8 +1,6 @@
-# GitlabRoulette
+# Gitlab Roulette
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/gitlab_roulette`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Gitlab Roulette chooses automatically a random reviewer and maintainer for your merge request and prints a beautiful message using DangerBot.
 
 ## Installation
 
@@ -22,22 +20,43 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+First of all, you must set some environment variables to your Gitlab CI pipeline:
 
-## Development
+```yaml
+  CI_PROJECT_NAME: "your_project_name"
+  GITLAB_ROULETTE_URL: "url to json file"
+  GITLAB_HOST: "https://self_hosted_gitlab_url"
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Then all you have to do is to create a Dangerfile in the root directory of the project with the following configuration:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+	# frozen_string_literal: true
 
-## Contributing
+	danger.import_dangerfile(gem: "gitlab_roulette")
+```
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/gitlab_roulette. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+GITLAB_ROULETTE_URL contains a JSON file with all the users from your Gitlab and his rank
+
+```json
+[
+	{
+		"username":"andrei.merfu","name":"Andrei Merfu",
+		"role":"Backend Engineer",
+		"projects": {
+			"gitlab_roulette":"maintainer backend"
+		}
+	},
+	{
+		"username":"another.user","name":"X Y",
+		"role":"Backend Engineer",
+		"projects": {
+			"gitlab_roulette":"reviewer backend"
+		}
+	}
+]
+```
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the GitlabRoulette project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/gitlab_roulette/blob/master/CODE_OF_CONDUCT.md).
