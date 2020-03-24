@@ -15,7 +15,8 @@ module Gitlab
       end
 
       def markdown_name
-        "[#{name}](#{gitlab_host}/#{username}) (`@#{username}`)"
+        # "[#{name}](#{gitlab_host}/#{username}) (`@#{username}`)"\
+        "[#{name}](#{gitlab_host}/#{username}) (@#{username})"
       end
 
       def in_project?(name)
