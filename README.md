@@ -1,3 +1,4 @@
+❗ Deprecated
 # Gitlab Roulette
 
 Gitlab Roulette chooses automatically a random reviewer and maintainer for your merge request and prints a beautiful message using DangerBot.
